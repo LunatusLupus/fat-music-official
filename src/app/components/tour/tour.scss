@@ -1,0 +1,108 @@
+.tour-section {
+  min-height: 100vh;
+  background: #0a0a0a;
+  padding: 120px 5%;
+  display: flex;
+  align-items: center;
+
+  .section-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .section-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    letter-spacing: 0.2em;
+    color: #f0f0f0;
+    margin: 0 0 60px;
+    line-height: 1;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #E91E63;
+      margin-top: 16px;
+    }
+  }
+
+  .tour-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .tour-row {
+    display: grid;
+    grid-template-columns: 180px 1fr 1fr auto;
+    align-items: center;
+    padding: 24px 30px;
+    background: #141414;
+    border-left: 3px solid transparent;
+    transition: background 0.2s, border-color 0.2s;
+    gap: 20px;
+
+    &:hover {
+      background: #1e1e1e;
+      border-left-color: #E91E63;
+    }
+
+    &.sold-out {
+      opacity: 0.5;
+    }
+
+    .tour-date {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      color: #E91E63;
+    }
+
+    .tour-city {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.1em;
+      color: #f0f0f0;
+    }
+
+    .tour-venue {
+      font-size: 0.9rem;
+      color: rgba(240, 240, 240, 0.5);
+      letter-spacing: 0.05em;
+    }
+
+    .tour-action {
+      text-align: right;
+
+      .ticket-btn {
+        font-family: 'Bebas Neue', sans-serif;
+        letter-spacing: 0.15em;
+        font-size: 0.95rem;
+      }
+
+      .sold-out-label {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.2em;
+        color: rgba(240, 240, 240, 0.4);
+        border: 1px solid rgba(240, 240, 240, 0.2);
+        padding: 6px 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .tour-row {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto;
+
+    .tour-date { grid-column: 1; }
+    .tour-city { grid-column: 2; }
+    .tour-venue { grid-column: 1; }
+    .tour-action { grid-column: 2; }
+  }
+}

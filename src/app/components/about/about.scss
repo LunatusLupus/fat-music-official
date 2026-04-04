@@ -1,0 +1,105 @@
+.about-section {
+  min-height: 100vh;
+  background: #111111;
+  padding: 120px 5%;
+  display: flex;
+  align-items: center;
+
+  .section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    letter-spacing: 0.2em;
+    color: #f0f0f0;
+    margin: 0 0 60px;
+    line-height: 1;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #E91E63;
+      margin-top: 16px;
+    }
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: start;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .about-image {
+    .image-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, #1a0020 0%, #2d0035 50%, #E91E63 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 5rem;
+        letter-spacing: 0.3em;
+        color: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+
+  .about-text {
+    .bio {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: rgba(240, 240, 240, 0.8);
+      margin: 0 0 50px;
+    }
+
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+
+      @media (max-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .member-card {
+      text-align: center;
+
+      .member-avatar {
+        width: 100%;
+        aspect-ratio: 1;
+        background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+        border: 1px solid rgba(233, 30, 99, 0.2);
+        margin-bottom: 12px;
+      }
+
+      .member-role {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.2em;
+        color: #E91E63;
+        margin-bottom: 4px;
+      }
+
+      .member-name {
+        font-size: 0.85rem;
+        color: rgba(240, 240, 240, 0.5);
+        letter-spacing: 0.1em;
+      }
+    }
+  }
+}

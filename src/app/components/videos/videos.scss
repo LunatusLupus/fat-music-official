@@ -1,0 +1,66 @@
+.videos-section {
+  min-height: 100vh;
+  background: #0f0f0f;
+  padding: 120px 5%;
+  display: flex;
+  align-items: center;
+
+  .section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    letter-spacing: 0.2em;
+    color: #f0f0f0;
+    margin: 0 0 60px;
+    line-height: 1;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #E91E63;
+      margin-top: 16px;
+    }
+  }
+
+  .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+  }
+
+  .video-wrapper {
+    .video-responsive {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border: 1px solid rgba(233, 30, 99, 0.15);
+
+      &:hover {
+        border-color: rgba(233, 30, 99, 0.4);
+      }
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .video-title {
+      margin: 12px 0 0;
+      font-size: 0.85rem;
+      color: rgba(240, 240, 240, 0.5);
+      letter-spacing: 0.1em;
+    }
+  }
+}

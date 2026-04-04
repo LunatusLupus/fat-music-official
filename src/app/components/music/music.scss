@@ -1,0 +1,128 @@
+.music-section {
+  min-height: 100vh;
+  background: #111111;
+  padding: 120px 5%;
+  display: flex;
+  align-items: center;
+
+  .section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    letter-spacing: 0.2em;
+    color: #f0f0f0;
+    margin: 0 0 60px;
+    line-height: 1;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #E91E63;
+      margin-top: 16px;
+    }
+  }
+
+  .albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+  }
+
+  .album-card {
+    background: #1a1a1a !important;
+    border: 1px solid rgba(233, 30, 99, 0.15) !important;
+    border-radius: 4px !important;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(233, 30, 99, 0.2) !important;
+      border-color: rgba(233, 30, 99, 0.4) !important;
+    }
+
+    .album-art {
+      width: 100%;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+
+      .album-art-text {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.8rem;
+        letter-spacing: 0.2em;
+        color: rgba(255, 255, 255, 0.15);
+        text-align: center;
+        padding: 20px;
+      }
+    }
+
+    .album-info {
+      padding: 20px !important;
+
+      .album-title {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.6rem;
+        letter-spacing: 0.1em;
+        color: #f0f0f0;
+        margin: 0 0 8px;
+      }
+
+      .album-year {
+        font-size: 0.9rem;
+        color: #E91E63;
+        margin: 0 0 4px;
+        font-weight: 600;
+      }
+
+      .album-genre {
+        font-size: 0.85rem;
+        color: rgba(240, 240, 240, 0.5);
+        margin: 0 0 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .album-actions {
+        display: flex;
+        gap: 12px;
+
+        .info-btn {
+          border-color: rgba(240, 240, 240, 0.3) !important;
+          color: rgba(240, 240, 240, 0.7) !important;
+        }
+      }
+    }
+  }
+
+  .more-music {
+    margin-top: 50px;
+    text-align: center;
+
+    .more-link {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.3em;
+      color: #E91E63;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(233, 30, 99, 0.4);
+      padding-bottom: 4px;
+      transition: border-color 0.2s;
+
+      &:hover {
+        border-color: #E91E63;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<mat-toolbar class="navbar" [class.scrolled]="isScrolled()">
+  <span class="logo">FAT</span>
+  <span class="spacer"></span>
+  <nav class="nav-links desktop-nav">
+    <button mat-button (click)="scrollTo('music')">MUSIC</button>
+    <button mat-button (click)="scrollTo('tour')">TOUR</button>
+    <button mat-button (click)="scrollTo('videos')">VIDEOS</button>
+    <button mat-button (click)="scrollTo('about')">ABOUT</button>
+  </nav>
+  <button mat-icon-button class="hamburger" (click)="toggleMenu()" aria-label="Menu">
+    <mat-icon>{{ mobileMenuOpen() ? 'close' : 'menu' }}</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="mobile-menu" [class.open]="mobileMenuOpen()">
+  <button mat-button (click)="scrollTo('music')">MUSIC</button>
+  <button mat-button (click)="scrollTo('tour')">TOUR</button>
+  <button mat-button (click)="scrollTo('videos')">VIDEOS</button>
+  <button mat-button (click)="scrollTo('about')">ABOUT</button>
+</div>

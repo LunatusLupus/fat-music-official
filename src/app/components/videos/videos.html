@@ -1,0 +1,21 @@
+<section id="videos" class="videos-section">
+  <div class="section-container">
+    <h2 class="section-heading">VIDEOS</h2>
+    <div class="videos-grid">
+      @for (video of videos; track video.id) {
+        <div class="video-wrapper">
+          <div class="video-responsive">
+            <iframe
+              [src]="video.safeUrl"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              [title]="video.title">
+            </iframe>
+          </div>
+          <p class="video-title">{{ video.title }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

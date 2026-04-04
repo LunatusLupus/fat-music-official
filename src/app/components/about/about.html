@@ -1,0 +1,26 @@
+<section id="about" class="about-section">
+  <div class="section-container">
+    <h2 class="section-heading">ABOUT</h2>
+    <div class="about-content">
+      <div class="about-image">
+        <div class="image-placeholder">
+          <span>FAT</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="bio">
+          FAT is a metalcore band formed in 2021, known for crushing riffs, melodic breakdowns, and relentless energy. Drawing inspiration from the heaviest corners of modern metal, FAT delivers an uncompromising live experience and a sound that hits like a freight train.
+        </p>
+        <div class="members-grid">
+          @for (member of members; track member.role) {
+            <div class="member-card">
+              <div class="member-avatar"></div>
+              <div class="member-role">{{ member.role }}</div>
+              <div class="member-name">{{ member.name }}</div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

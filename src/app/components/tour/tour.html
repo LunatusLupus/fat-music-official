@@ -1,0 +1,21 @@
+<section id="tour" class="tour-section">
+  <div class="section-container">
+    <h2 class="section-heading">TOUR</h2>
+    <div class="tour-list">
+      @for (show of tourDates; track show.date) {
+        <div class="tour-row" [class.sold-out]="show.soldOut">
+          <div class="tour-date">{{ show.date }}</div>
+          <div class="tour-city">{{ show.city }}</div>
+          <div class="tour-venue">{{ show.venue }}</div>
+          <div class="tour-action">
+            @if (show.soldOut) {
+              <span class="sold-out-label">SOLD OUT</span>
+            } @else {
+              <button mat-raised-button color="accent" class="ticket-btn">TICKETS</button>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

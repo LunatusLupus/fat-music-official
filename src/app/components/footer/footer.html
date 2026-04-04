@@ -1,0 +1,35 @@
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">FAT</div>
+        <p class="footer-copy">© 2025 FAT. All rights reserved.</p>
+      </div>
+      <div class="footer-social">
+        <h4>FOLLOW US</h4>
+        <div class="social-links">
+          <a href="#" mat-button class="social-link">INSTAGRAM</a>
+          <a href="#" mat-button class="social-link">YOUTUBE</a>
+          <a href="#" mat-button class="social-link">SPOTIFY</a>
+          <a href="#" mat-button class="social-link">FACEBOOK</a>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <h4>SIGN UP FOR UPDATES</h4>
+        <div class="newsletter-form">
+          <mat-form-field appearance="outline" class="email-field">
+            <mat-label>Your email</mat-label>
+            <input matInput type="email" [(ngModel)]="email" placeholder="email@example.com" />
+          </mat-form-field>
+          <button mat-raised-button color="accent" (click)="subscribe()" class="subscribe-btn">
+            SUBSCRIBE
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>FAT © 2025</span>
+      <span>METALCORE FROM THE UNDERGROUND</span>
+    </div>
+  </div>
+</footer>

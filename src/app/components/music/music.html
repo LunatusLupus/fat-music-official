@@ -1,0 +1,26 @@
+<section id="music" class="music-section">
+  <div class="section-container">
+    <h2 class="section-heading">MUSIC</h2>
+    <div class="albums-grid">
+      @for (album of albums; track album.title) {
+        <mat-card class="album-card">
+          <div class="album-art" [style.background]="album.gradient">
+            <div class="album-art-text">{{ album.title }}</div>
+          </div>
+          <mat-card-content class="album-info">
+            <h3 class="album-title">{{ album.title }}</h3>
+            <p class="album-year">{{ album.year }}</p>
+            <p class="album-genre">{{ album.genre }}</p>
+            <div class="album-actions">
+              <button mat-raised-button color="accent">STREAM</button>
+              <button mat-stroked-button class="info-btn">INFO</button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+    <div class="more-music">
+      <a href="#" class="more-link">MORE MUSIC →</a>
+    </div>
+  </div>
+</section>
