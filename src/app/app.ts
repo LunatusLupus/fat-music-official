@@ -1,25 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar';
-import { HeroComponent } from './components/hero/hero';
-import { MusicComponent } from './components/music/music';
-import { TourComponent } from './components/tour/tour';
-import { VideosComponent } from './components/videos/videos';
-import { AboutComponent } from './components/about/about';
 import { FooterComponent } from './components/footer/footer';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { filter, map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    NavbarComponent,
-    HeroComponent,
-    MusicComponent,
-    TourComponent,
-    VideosComponent,
-    AboutComponent,
-    FooterComponent,
-  ],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {}
+export class App {
+  private router = inject(Router);
+
+  private url = toSignal(
+    this.router.events.pipe(
+      filter(e => e instanceof NavigationEnd),
+      map(e => (e as NavigationEnd).urlAfterRedirects),
+      startWith(this.router.url)
+    )
+  );
+
+  showChrome = computed(() => this.url() !== '/');
+}
