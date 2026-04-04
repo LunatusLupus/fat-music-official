@@ -35,15 +35,14 @@
   padding: 2rem;
 }
 
-.band-name {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(8rem, 20vw, 18rem);
-  color: #fff;
-  line-height: 1;
-  letter-spacing: 0.1em;
-  text-shadow:
-    0 0 80px rgba(233, 30, 99, 0.4),
-    0 0 160px rgba(233, 30, 99, 0.15);
+.band-logo {
+  width: clamp(280px, 50vw, 700px);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter:
+    drop-shadow(0 0 40px rgba(233, 30, 99, 0.5))
+    drop-shadow(0 0 100px rgba(233, 30, 99, 0.2));
   animation: flicker 6s ease-in-out infinite;
 }
 
