@@ -23,5 +23,8 @@ export class App {
     )
   );
 
-  showChrome = computed(() => this.url() !== '/');
+  showChrome = computed(() => {
+    const url = this.url() ?? '';
+    return url !== '/' && url !== '';
+  });
 }
