@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>FatMusicOfficial</title>
+    <title>FAT — Metalcore</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="data:," />
@@ -13,6 +13,16 @@
       rel="stylesheet"
     />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script>
+      // GitHub Pages SPA routing: restore path saved by 404.html
+      (function() {
+        var redirect = sessionStorage.getItem('redirect');
+        if (redirect && redirect !== '/') {
+          sessionStorage.removeItem('redirect');
+          window.history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
   </head>
   <body>
     <app-root></app-root>
