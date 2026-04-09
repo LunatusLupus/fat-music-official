@@ -1,26 +1,26 @@
 <section id="music" class="music-section">
   <div class="section-container">
     <h2 class="section-heading">MUSIC</h2>
-    <div class="albums-grid">
-      @for (album of albums; track album.title) {
-        <mat-card class="album-card">
-          <div class="album-art" [style.background]="album.gradient">
-            <div class="album-art-text">{{ album.title }}</div>
-          </div>
-          <mat-card-content class="album-info">
-            <h3 class="album-title">{{ album.title }}</h3>
-            <p class="album-year">{{ album.year }}</p>
-            <p class="album-genre">{{ album.genre }}</p>
-            <div class="album-actions">
-              <button mat-raised-button color="accent">STREAM</button>
-              <button mat-stroked-button class="info-btn">INFO</button>
-            </div>
-          </mat-card-content>
-        </mat-card>
-      }
+    <div class="music-content">
+      <div class="bandcamp-embed">
+        <iframe
+          [src]="bandcampUrl"
+          style="border: 0; width: 350px; height: 442px;"
+          seamless>
+        </iframe>
+      </div>
+      <div class="music-info">
+        <h3 class="track-title">DROWNED IN DECAY</h3>
+        <p class="track-band">F.A.T</p>
+        <p class="track-desc">Our latest single — stream it now on Bandcamp.</p>
+        <div class="music-actions">
+          <a href="https://fatmusicda.bandcamp.com/track/drowned-in-decay" target="_blank" mat-raised-button color="accent">LISTEN ON BANDCAMP</a>
+          <a href="https://www.youtube.com/watch?v=lnbvvY3v80E" target="_blank" mat-stroked-button class="yt-btn">WATCH ON YOUTUBE</a>
+        </div>
+      </div>
     </div>
     <div class="more-music">
-      <a href="https://fatmusicda.bandcamp.com/track/drowned-in-decay" target="_blank" class="more-link">MORE MUSIC →</a>
+      <a href="https://fatmusicda.bandcamp.com" target="_blank" class="more-link">MORE MUSIC →</a>
     </div>
   </div>
 </section>

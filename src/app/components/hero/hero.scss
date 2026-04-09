@@ -42,16 +42,17 @@
     padding: 0 20px;
 
     .band-name {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(8rem, 22vw, 22rem);
-      line-height: 0.85;
-      letter-spacing: 0.15em;
-      color: #f0f0f0;
-      text-shadow:
-        0 0 60px rgba(233, 30, 99, 0.4),
-        0 0 120px rgba(233, 30, 99, 0.2),
-        0 4px 30px rgba(0, 0, 0, 0.8);
       animation: name-appear 1.2s ease-out forwards;
+
+      .hero-logo {
+        width: clamp(220px, 45vw, 600px);
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        filter:
+          drop-shadow(0 0 40px rgba(233, 30, 99, 0.5))
+          drop-shadow(0 0 100px rgba(233, 30, 99, 0.2));
+      }
     }
 
     .tagline {

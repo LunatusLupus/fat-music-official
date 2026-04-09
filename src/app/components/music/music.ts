@@ -1,27 +1,20 @@
 import { Component } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-music',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule],
+  imports: [MatButtonModule],
   templateUrl: './music.html',
   styleUrl: './music.scss'
 })
 export class MusicComponent {
-  albums = [
-    {
-      title: 'SELF-TITLED EP',
-      year: '2023',
-      genre: 'Metalcore',
-      gradient: 'linear-gradient(135deg, #1a0020 0%, #E91E63 50%, #0a0a0a 100%)'
-    },
-    {
-      title: 'WRECKAGE',
-      year: '2024',
-      genre: 'Metalcore / Deathcore',
-      gradient: 'linear-gradient(135deg, #0d0010 0%, #673AB7 50%, #0a0a0a 100%)'
-    }
-  ];
+  bandcampUrl: SafeResourceUrl;
+
+  constructor(private sanitizer: DomSanitizer) {
+    this.bandcampUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+      'https://bandcamp.com/EmbeddedPlayer/track=227092325/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/'
+    );
+  }
 }

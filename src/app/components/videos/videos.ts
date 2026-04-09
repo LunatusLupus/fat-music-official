@@ -13,9 +13,7 @@ export class VideosComponent {
 
   constructor(private sanitizer: DomSanitizer) {
     const raw = [
-      { id: 'W4ZlWw987KI', title: 'ARCHITECTS — "ANIMALS"' },
-      { id: '8SoLPeFquLM', title: 'ARCHITECTS — "GONE WITH THE WIND"' },
-      { id: 'C9CrT6iC7Cc', title: 'ARCHITECTS — "DEVIL IS NEAR"' },
+      { id: 'lnbvvY3v80E', title: 'F.A.T — DROWNED IN DECAY' },
     ];
     this.videos = raw.map(v => ({
       ...v,
