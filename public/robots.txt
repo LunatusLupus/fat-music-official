@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /backstage
+
+Sitemap: https://fat-music-official.de/sitemap.xml

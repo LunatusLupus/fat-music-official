@@ -36,6 +36,14 @@
               }
             ],
             "styles": [
+              "@fontsource/bebas-neue/latin-400.css",
+              "@fontsource/inter/latin-300.css",
+              "@fontsource/inter/latin-400.css",
+              "@fontsource/inter/latin-500.css",
+              "@fontsource/inter/latin-600.css",
+              "@fontsource/roboto/latin-300.css",
+              "@fontsource/roboto/latin-400.css",
+              "@fontsource/roboto/latin-500.css",
               "src/styles.scss"
             ]
           },

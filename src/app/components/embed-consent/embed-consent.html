@@ -1,0 +1,18 @@
+@if (loaded()) {
+  <iframe
+    [src]="safeUrl()"
+    [title]="title()"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+} @else {
+  <div class="consent">
+    <p class="consent-title">{{ title() }}</p>
+    <p class="consent-text">
+      This content is hosted by {{ provider() }}. Loading it sends data such as your IP address
+      to {{ provider() }}. More in our <a routerLink="/privacy">privacy policy</a>.
+    </p>
+    <button type="button" class="consent-btn" (click)="load()">LOAD {{ provider() }}</button>
+  </div>
+}

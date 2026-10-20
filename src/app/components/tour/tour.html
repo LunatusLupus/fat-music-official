@@ -2,7 +2,7 @@
   <div class="section-container">
     <h2 class="section-heading">TOUR</h2>
     <div class="tour-list">
-      @for (show of tourDates; track show.date) {
+      @for (show of tourDates; track show.date + show.city) {
         <div class="tour-row" [class.sold-out]="show.soldOut">
           <div class="tour-date">{{ show.date }}</div>
           <div class="tour-city">{{ show.city }}</div>
@@ -10,10 +10,15 @@
           <div class="tour-action">
             @if (show.soldOut) {
               <span class="sold-out-label">SOLD OUT</span>
-            } @else {
-              <button mat-raised-button color="accent" class="ticket-btn">TICKETS</button>
+            } @else if (show.ticketUrl) {
+              <a mat-raised-button class="ticket-btn" [href]="show.ticketUrl" target="_blank" rel="noopener">TICKETS</a>
             }
           </div>
+        </div>
+      } @empty {
+        <div class="tour-empty">
+          <p>NO SHOWS ANNOUNCED RIGHT NOW.</p>
+          <a href="https://www.instagram.com/fat.music.da/" target="_blank" rel="noopener">FOLLOW US ON INSTAGRAM FOR UPDATES →</a>
         </div>
       }
     </div>

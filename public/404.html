@@ -6,7 +6,7 @@
     <script>
       // GitHub Pages SPA redirect hack
       // Saves the path to sessionStorage and redirects to index.html
-      var path = window.location.pathname;
+      var path = window.location.pathname + window.location.search + window.location.hash;
       sessionStorage.setItem('redirect', path);
       window.location.replace('/');
     </script>

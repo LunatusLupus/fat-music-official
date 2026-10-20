@@ -5,13 +5,11 @@
       @for (video of videos; track video.id) {
         <div class="video-wrapper">
           <div class="video-responsive">
-            <iframe
-              [src]="video.safeUrl"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              [title]="video.title">
-            </iframe>
+            <app-embed-consent
+              [src]="video.embedUrl"
+              [title]="video.title"
+              provider="YouTube">
+            </app-embed-consent>
           </div>
           <p class="video-title">{{ video.title }}</p>
         </div>

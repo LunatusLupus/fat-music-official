@@ -19,8 +19,9 @@
 
   h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 4rem;
+    font-size: clamp(2.4rem, 9vw, 4rem);
     letter-spacing: 0.2em;
+    hyphens: manual;
     color: #fff;
     margin-bottom: 2rem;
     border-bottom: 2px solid #E91E63;
