@@ -1,5 +1,6 @@
-import { Component, computed, inject } from '@angular/core';
-import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { Component, computed, effect, inject } from '@angular/core';
+import { RouterOutlet, Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Meta } from '@angular/platform-browser';
 import { NavbarComponent } from './components/navbar/navbar';
 import { FooterComponent } from './components/footer/footer';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -14,6 +15,8 @@ import { filter, map, startWith } from 'rxjs/operators';
 })
 export class App {
   private router = inject(Router);
+  private route = inject(ActivatedRoute);
+  private meta = inject(Meta);
 
   private url = toSignal(
     this.router.events.pipe(
@@ -27,4 +30,17 @@ export class App {
     const url = this.url() ?? '';
     return url !== '/' && url !== '';
   });
+
+  constructor() {
+    // Keep pages that are not public yet (e.g. /backstage) out of search engines
+    effect(() => {
+      this.url();
+      let child = this.route.snapshot;
+      while (child.firstChild) child = child.firstChild;
+      this.meta.updateTag({
+        name: 'robots',
+        content: child.data['noindex'] ? 'noindex, nofollow' : 'index, follow'
+      });
+    });
+  }
 }

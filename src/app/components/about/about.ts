@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './about.scss'
 })
 export class AboutComponent {
+  // TODO(content): echte Namen eintragen (oder Mitglieder-Raster entfernen)
   members = [
     { role: 'VOCALIST', name: 'TBA' },
     { role: 'GUITARIST', name: 'TBA' },

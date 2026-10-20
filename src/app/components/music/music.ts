@@ -1,20 +1,15 @@
 import { Component } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
+import { EmbedConsentComponent } from '../embed-consent/embed-consent';
 
 @Component({
   selector: 'app-music',
   standalone: true,
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, EmbedConsentComponent],
   templateUrl: './music.html',
   styleUrl: './music.scss'
 })
 export class MusicComponent {
-  bandcampUrl: SafeResourceUrl;
-
-  constructor(private sanitizer: DomSanitizer) {
-    this.bandcampUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-      'https://bandcamp.com/EmbeddedPlayer/track=227092325/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/'
-    );
-  }
+  bandcampUrl =
+    'https://bandcamp.com/EmbeddedPlayer/track=227092325/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/';
 }

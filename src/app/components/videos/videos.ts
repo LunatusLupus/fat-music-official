@@ -1,25 +1,19 @@
 import { Component } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { EmbedConsentComponent } from '../embed-consent/embed-consent';
 
 @Component({
   selector: 'app-videos',
   standalone: true,
-  imports: [],
+  imports: [EmbedConsentComponent],
   templateUrl: './videos.html',
   styleUrl: './videos.scss'
 })
 export class VideosComponent {
-  videos: { id: string; title: string; safeUrl: SafeResourceUrl }[];
-
-  constructor(private sanitizer: DomSanitizer) {
-    const raw = [
-      { id: 'lnbvvY3v80E', title: 'F.A.T — DROWNED IN DECAY' },
-    ];
-    this.videos = raw.map(v => ({
-      ...v,
-      safeUrl: this.sanitizer.bypassSecurityTrustResourceUrl(
-        `https://www.youtube.com/embed/${v.id}`
-      )
-    }));
-  }
+  videos = [
+    { id: 'lnbvvY3v80E', title: 'F.A.T — DROWNED IN DECAY' },
+  ].map(v => ({
+    ...v,
+    // youtube-nocookie.com: no tracking cookies until the visitor hits play
+    embedUrl: `https://www.youtube-nocookie.com/embed/${v.id}`
+  }));
 }
